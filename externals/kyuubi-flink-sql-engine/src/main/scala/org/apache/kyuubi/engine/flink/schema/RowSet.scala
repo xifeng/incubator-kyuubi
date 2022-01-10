@@ -222,7 +222,15 @@ object RowSet {
     case _: DoubleType => TTypeId.DOUBLE_TYPE
     case _: VarCharType => TTypeId.STRING_TYPE
     case _: CharType => TTypeId.STRING_TYPE
+    case _: TinyIntType => TTypeId.TINYINT_TYPE
+    case _: SmallIntType => TTypeId.SMALLINT_TYPE
+    case _: IntType => TTypeId.INT_TYPE
+    case _: BigIntType => TTypeId.BIGINT_TYPE
     case _: DecimalType => TTypeId.DECIMAL_TYPE
+    case _: BinaryType => TTypeId.BINARY_TYPE
+    case _: VarBinaryType => TTypeId.BINARY_TYPE
+    case _: DateType => TTypeId.DATE_TYPE
+    case _: TimestampType => TTypeId.TIMESTAMP_TYPE
     case other =>
       throw new IllegalArgumentException(s"Unrecognized type name: ${other.asSummaryString()}")
   }
